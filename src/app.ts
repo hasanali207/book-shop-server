@@ -1,29 +1,25 @@
-import cors from 'cors';
 import express, { Application, Request, Response } from 'express';
-import { bookRoutes } from './app/modules/book/book.route';
-import { orderRoutes } from './app/modules/order/order.routes';
+import cors from 'cors';
+import authRoutes from './app/auth/auth.route';
+
+
 const app: Application = express();
 
-// parsers
+// Middleware
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: 'http://localhost:5173',
+    credentials: true,
+  })
+);
 
-app.use('/api/products', bookRoutes);
-app.use('/api/orders', orderRoutes);
+// Application routes
 
+app.use('/api/auth', authRoutes);
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Book Store Server Rnning 😎');
-});
-
-
-app.use((req: Request, res: Response) => {
-  res.status(404).json({
-    success: false,
-    message: 'Route not found',
-    error: { message: 'Route not found' },
-    stack: null,
-  });
+  res.send('Welcome to my Stationary shop');
 });
 
 export default app;
