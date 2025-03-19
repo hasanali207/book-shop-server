@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import { loginUser, registerUser, } from './user.service';
 
-
 // REGISTER CONTROLLER
 export const register = async (req: Request, res: Response) => {
   try {
