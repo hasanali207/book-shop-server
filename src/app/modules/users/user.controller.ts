@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { loginUser, registerUser, } from './user.service';
+import { loginUser, registerUser } from './user.service';
 import User from './user.model';
 
 // REGISTER CONTROLLER
@@ -33,16 +33,4 @@ export const getAllUsers = async (req: Request, res: Response) => {
   } catch (error: any) {
     res.status(400).json({ message: error.message });
   }
-  
 };
-
-
-
-
-
-
-
-
-
-
-

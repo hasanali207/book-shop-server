@@ -7,12 +7,13 @@ router.get('/user', authMiddleware as RequestHandler, (req, res) => {
   res.json({ message: 'Welcome to User Dashboard' });
 });
 
-router.get('/admin', 
-  authMiddleware as RequestHandler, 
-  adminMiddleware as RequestHandler, 
+router.get(
+  '/admin',
+  authMiddleware as RequestHandler,
+  adminMiddleware as RequestHandler,
   (req, res) => {
     res.json({ message: 'Welcome to Admin Dashboard' });
-  }
+  },
 );
 
 export default router;

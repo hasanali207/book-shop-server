@@ -13,7 +13,7 @@ app.use(
   cors({
     origin: 'http://localhost:5173',
     credentials: true,
-  })
+  }),
 );
 
 // Application routes
@@ -22,7 +22,6 @@ app.use('/api/auth', authRoutes);
 app.use('/api/dashboard', dashBoardRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/product', productRoutes);
-
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Welcome to my Stationary shop');

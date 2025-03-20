@@ -19,11 +19,13 @@ export interface AuthRequest extends Request {
 export const authMiddleware = (
   req: AuthRequest,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   const authHeader = req.header('Authorization');
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return res.status(401).json({ message: 'Access Denied. No Token Provided.' });
+    return res
+      .status(401)
+      .json({ message: 'Access Denied. No Token Provided.' });
   }
 
   const token = authHeader.split(' ')[1];
@@ -41,7 +43,7 @@ export const authMiddleware = (
 export const adminMiddleware = (
   req: AuthRequest,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   if (!req.user || req.user.role !== 'admin') {
     return res.status(403).json({ message: 'Access Denied. Admins Only.' });
