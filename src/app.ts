@@ -3,6 +3,7 @@ import cors from 'cors';
 import authRoutes from './app/auth/auth.route';
 import dashBoardRoutes from './app/dashboard/dashboard.route';
 import userRoutes from './app/modules/users/user.Route';
+import productRoutes from './app/modules/product/product.route';
 
 const app: Application = express();
 
@@ -20,6 +21,8 @@ app.use(
 app.use('/api/auth', authRoutes);
 app.use('/api/dashboard', dashBoardRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/product', productRoutes);
+
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Welcome to my Stationary shop');
