@@ -1,9 +1,8 @@
 export enum ProductCategory {
-  HISTORY = 'History',
-  DRAMA = 'Drama',
-  THRILLER = 'Thriller',
   NOVEL = 'Novel',
-  SCIFI = 'SciFi',
+  ADVENTURE = 'Adventure',
+  DRAMA = 'Drama',
+  HISTORY = 'History',
   FANTASY = 'Fantasy',
 }
 
