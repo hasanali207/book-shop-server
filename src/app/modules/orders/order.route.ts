@@ -21,4 +21,4 @@ router.delete('/:orderId', OrderController.deleteOrder);
 // Calculate revenue
 router.get('/revenue', OrderController.calculateRevenue);
 
-export const OrderRoutes = router;
+export default router;

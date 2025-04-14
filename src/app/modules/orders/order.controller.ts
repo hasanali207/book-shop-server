@@ -4,7 +4,7 @@ import { ProductModel } from '../product/product.model';
 import { OrderModel } from './order.model';
 
 //Create  Order
-const createOrder = async (req: Request, res: Response) => {
+const createOrder = async (req: Request, res: Response): Promise<void> =>  {
   try {
     const { email, products, totalPrice, paymentIntentId } = req.body;
 
@@ -60,7 +60,7 @@ const createOrder = async (req: Request, res: Response) => {
 };
 
 //Get All orders
-const getAllOrders = async (req: Request, res: Response) => {
+const getAllOrders = async (req: Request, res: Response): Promise<void> => {
   try {
     const result = await OrderServices.getAllOrdersFromDB();
 
@@ -78,7 +78,7 @@ const getAllOrders = async (req: Request, res: Response) => {
 };
 
 //Get Order by id
-const getOrderById = async (req: Request, res: Response) => {
+const getOrderById = async (req: Request, res: Response): Promise<void> => {
   try {
     const { orderId } = req.params;
 
@@ -105,7 +105,7 @@ const getOrderById = async (req: Request, res: Response) => {
 };
 
 //Update order
-const updateOrderStatus = async (req: Request, res: Response) => {
+const updateOrderStatus = async (req: Request, res: Response): Promise<void> => {
   try {
     const { orderId } = req.params;
     const { status } = req.body;
@@ -133,7 +133,7 @@ const updateOrderStatus = async (req: Request, res: Response) => {
 };
 
 //Delete orders
-const deleteOrder = async (req: Request, res: Response) => {
+const deleteOrder = async (req: Request, res: Response): Promise<void> => {
   try {
     const { orderId } = req.params;
 
@@ -153,7 +153,7 @@ const deleteOrder = async (req: Request, res: Response) => {
 };
 
 //Calculate Rvenew
-const calculateRevenue = async (req: Request, res: Response) => {
+const calculateRevenue = async (req: Request, res: Response) : Promise<void> => {
   try {
     const totalRevenue = await OrderServices.calculateRevenueFromDB();
 

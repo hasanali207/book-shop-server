@@ -6,7 +6,7 @@ import userRoutes from './app/modules/users/user.Route';
 import productRoutes from './app/modules/product/product.route';
 import cartRoutes  from './app/modules/cart/cart.route';
 import paymentRoutes from './app/modules/payment/payment.route';
-import { OrderRoutes } from './app/modules/orders/order.route';
+import  orderRoutes  from './app/modules/orders/order.route';
 const app: Application = express();
 
 // Middleware
@@ -26,7 +26,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/payments', paymentRoutes);
-app.use('/api/orders', OrderRoutes);
+app.use('/api/orders', orderRoutes);
 app.get('/', (req: Request, res: Response) => {
   res.send('Welcome to my Stationary shop');
 });

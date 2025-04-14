@@ -3,5 +3,6 @@ export interface IUser {
   email: string;
   password: string;
   image?: string;
+  shippingAddress?: string,
   role: 'user' | 'admin';
 }
